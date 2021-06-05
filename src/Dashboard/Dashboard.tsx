@@ -6,14 +6,32 @@ import './styles.css';
 const Header = React.lazy(() => import('mf4Navigation/Header'));
 const Sidebar = React.lazy(() => import('mf4Navigation/Sidebar'));
 
-const Dashboard = () => {
-  useEffect(() => {
-    import('mf1Main/MF1Main');
-  }, []);
+export function loadPlatform(): Promise<any> {
+  return import('mf1Main/MF1Platform');
+}
 
-  useEffect(() => {
-    import('mf3Cards/MF3Cards');
-  }, []);
+export function loadMF1Main(): Promise<any> {
+  return import('mf1Main/MF1Main');
+}
+
+export function loadMF3Cards(): Promise<any> {
+  return import('mf3Cards/MF3Cards');
+}
+
+const Dashboard = () => {
+  loadPlatform().then((platform) => {
+    const bootstrap = platform.default;
+
+    loadMF1Main().then((mf1Main) => {
+      const appModuleClass = mf1Main.AppModule;
+      bootstrap(appModuleClass);
+    });
+
+    loadMF3Cards().then((mf3Cards) => {
+      const appModuleClass = mf3Cards.AppModule;
+      bootstrap(appModuleClass);
+    });
+  });
 
   return (
     <React.Fragment>
