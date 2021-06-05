@@ -1,21 +1,16 @@
 const deps = require('./package.json').dependencies;
 const env = process.env.NODE_ENV || 'development';
 
-// example of service
-// {
-//   url: 'http://localhost:3001/',
-//   name: 'navigator',
-// }
-
-const services = [];
-
-const getRemotes = () =>
+const getRemotes = (services) =>
   services
     .map((service) => ({
       ...service,
       ...(env === 'production' && { url: '/' }),
+      ...(env === 'development' && { name: '' }),
     }))
-    .map((service) => `${service.url}${service.name}/remoteEntry.js`);
+    .map((service) => ({
+      [service.component]: `${service.component}@${service.url}${service.name}/remoteEntry.js`,
+    }));
 
 const getSharedDeps = () => ({
   ...deps,

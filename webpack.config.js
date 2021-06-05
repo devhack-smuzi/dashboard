@@ -4,6 +4,8 @@ const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPl
 const getRemotes = require('./utils').getRemotes;
 const getSharedDeps = require('./utils').getSharedDeps;
 
+const services = [];
+
 module.exports = {
   entry: './src/index',
   cache: false,
@@ -38,7 +40,7 @@ module.exports = {
 
   plugins: [
     new ModuleFederationPlugin({
-      remotes: getRemotes(),
+      remotes: getRemotes(services),
       shared: getSharedDeps(),
     }),
     new HtmlWebpackPlugin({
