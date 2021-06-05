@@ -1,0 +1,13 @@
+.dashboard {
+  display: flex;
+  width: 100%;
+}
+
+.sidebar {
+  background-color: rgb(50, 50, 66);
+}
+
+.content {
+  width: 100%;
+  padding: 48px;
+}
