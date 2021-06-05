@@ -1,12 +1,13 @@
 const deps = require('./package.json').dependencies;
 const env = process.env.NODE_ENV || 'development';
 
-const services = [
-  {
-    url: 'http://localhost:3001/',
-    name: 'navigator',
-  },
-];
+// example of service
+// {
+//   url: 'http://localhost:3001/',
+//   name: 'navigator',
+// }
+
+const services = [];
 
 const getRemotes = () =>
   services
