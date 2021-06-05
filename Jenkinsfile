@@ -16,7 +16,7 @@ pipeline {
         stage('Run') {
             steps {
                 sh 'docker rm -f ${CONT_NAME}' 
-                sh 'docker run --name ${CONT_NAME --net ${NETWORK} -d ${IMAGE_NAME}'
+                sh 'docker run --name ${CONT_NAME} --net ${NETWORK} -d ${IMAGE_NAME}'
             }
         }
     }
