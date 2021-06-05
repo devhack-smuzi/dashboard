@@ -1,16 +1,20 @@
 const deps = require('./package.json').dependencies;
+const env = process.env.NODE_ENV || 'development';
 
-// имена сервисов, которые должны подтянуться как зависимость
-const getRemotes = (services) =>
-  services.reduce((remotes, sname) => {
-    // url сервиса - например, либо "/payments/", либо process.env.payments_service_url
-    let serviceUrl = process.env[`${sname}_service_url`] || '/'.concat(sname);
-    // на всякий случай убираем слэш в конце
-    serviceUrl = serviceUrl.replace(/\/$/, '');
-    // например, "payments@/payments/remoteEntry.js"
-    const entryUrl = `${sname}@${serviceUrl}/remoteEntry.js`;
-    return { ...remotes, [sname]: entryUrl };
-  }, {});
+const services = [
+  {
+    url: 'http://localhost:3001/',
+    name: 'navigator',
+  },
+];
+
+const getRemotes = () =>
+  services
+    .map((service) => ({
+      ...service,
+      ...(env === 'production' && { url: '/' }),
+    }))
+    .map((service) => `${service.url}${service.name}/remoteEntry.js`);
 
 const getSharedDeps = () => ({
   ...deps,

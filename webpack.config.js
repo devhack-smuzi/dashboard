@@ -38,7 +38,7 @@ module.exports = {
 
   plugins: [
     new ModuleFederationPlugin({
-      remotes: getRemotes([]),
+      remotes: getRemotes(),
       shared: getSharedDeps(),
     }),
     new HtmlWebpackPlugin({
