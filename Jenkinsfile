@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        PORT = 3001
+        PORT = 5000
         IMAGE_NAME = 'dashboard-image'
         CONT_NAME = 'dashboard-cont'
     }
