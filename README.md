@@ -11,7 +11,7 @@ const services = [
 
 ```
 
-Dashboard.tsx
+Dashboard.tsx with React
 ```
 
 const Messages = React.lazy(() => import('messages/Messages'));
@@ -21,6 +21,18 @@ const Messages = React.lazy(() => import('messages/Messages'));
 <React.Suspense fallback={<div>....loading Header</div>}>
   <Messages />
 </React.Suspense>
+
+```
+
+
+Dashboard.tsx with Angular
+```
+
+useEffect(() => { import('psbPayments/PSBPayments') }, []);
+
+...
+
+<app-root></app-root>
 
 ```
 
