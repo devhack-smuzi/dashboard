@@ -1,3 +1,5 @@
+### Add service to dashboard
+
 webpack.config.js
 ```
 
@@ -41,4 +43,23 @@ global.d.tsx
 
 ```
 declare module 'messages/Messages';
+```
+
+
+### Create Angular widget
+
+exec
+```
+npx ng add @angular-architects/module-federation@next
+npx ng add ngx-build-plus
+```
+
+
+webpack.config.js
+```
+name: "mf1Main",
+filename: "remoteEntry.js",
+exposes: {
+    './MF1Main': './/src/bootstrap.ts',
+},    
 ```
