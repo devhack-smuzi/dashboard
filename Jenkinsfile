@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     environment {
-        PORT = 5000
         IMAGE_NAME = 'dashboard-image'
-        CONT_NAME = 'dashboard-cont'
+        CONT_NAME = 'dashboard'
+        NETWORK = "smuzi"
     }
 
     stages {
@@ -16,7 +16,7 @@ pipeline {
         stage('Run') {
             steps {
                 sh 'docker rm -f ${CONT_NAME}' 
-                sh 'docker run --name ${CONT_NAME} -d -p ${PORT}:80 ${IMAGE_NAME}'
+                sh 'docker run --name ${CONT_NAME --net ${NETWORK} -d ${IMAGE_NAME}'
             }
         }
     }
