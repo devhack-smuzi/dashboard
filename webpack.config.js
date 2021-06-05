@@ -16,6 +16,11 @@ const services = [
     endpoint: 'mf1main',
     name: 'mf1Main',
   },
+  {
+    url: 'http://localhost:5002/',
+    endpoint: 'mf3cards',
+    name: 'mf3Cards',
+  },
 ];
 
 module.exports = {

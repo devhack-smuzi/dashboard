@@ -11,6 +11,10 @@ const Dashboard = () => {
     import('mf1Main/MF1Main');
   }, []);
 
+  useEffect(() => {
+    import('mf3Cards/MF3Cards');
+  }, []);
+
   return (
     <React.Fragment>
       <React.Suspense fallback={<div>....loading Header</div>}>
@@ -25,6 +29,8 @@ const Dashboard = () => {
         <div className="content">
           {/* @ts-ignore */}
           <mf1-main></mf1-main>
+          {/* @ts-ignore */}
+          <mf3-cards></mf3-cards>
         </div>
       </div>
     </React.Fragment>
