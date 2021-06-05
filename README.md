@@ -5,9 +5,9 @@ webpack.config.js
 
 const services = [
   {
-    url: 'http://localhost:3006/',
-    component: 'messages',
-    name: 'messages',
+    url: 'http://localhost:5001/',
+    endpoint: 'mf1main', // only for production
+    name: 'mf1Main',
   },
 ];
 
