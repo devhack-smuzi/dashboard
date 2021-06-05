@@ -4,7 +4,13 @@ const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPl
 const getRemotes = require('./utils').getRemotes;
 const getSharedDeps = require('./utils').getSharedDeps;
 
-const services = [];
+const services = [
+  {
+    url: 'http://localhost:3005/',
+    endpoint: 'mf4navigation', // only for production
+    name: 'mf4Navigation',
+  },
+];
 
 module.exports = {
   entry: './src/index',
