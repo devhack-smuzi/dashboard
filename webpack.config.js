@@ -27,6 +27,11 @@ const services = [
     endpoint: 'widget/navigation',
     name: 'mf4Navigation',
   },
+  {
+    url: 'http://localhost:5005/',
+    endpoint: 'widget/legal-payments',
+    name: 'mf5LegalPayments',
+  },
 ];
 
 console.log(`/* REMOTES: */`);
