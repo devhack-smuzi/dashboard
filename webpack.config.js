@@ -28,6 +28,9 @@ const services = [
   },
 ];
 
+console.log(`/* REMOTES: */`);
+console.log(getRemotes(services));
+
 module.exports = {
   entry: './src/index',
   cache: false,
