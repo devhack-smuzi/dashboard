@@ -23,7 +23,7 @@ const MF1Main = () => {
 
   return (
     <div>
-      Main page
+      - главная
       {/* @ts-ignore */}
       <mf1-main></mf1-main>
     </div>
