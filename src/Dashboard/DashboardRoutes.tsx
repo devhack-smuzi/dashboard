@@ -4,6 +4,7 @@ import { Switch, Route, useHistory } from 'react-router-dom';
 import MF3Cards from '../components/MF3Cards';
 import MF1Main from '../components/MF1Main';
 import MF2Payments from '../components/MF2Payments';
+import MF5CreatePayment from '../components/MF5CreatePayment';
 
 const Sidebar = React.lazy(() => import('mf4Navigation/Sidebar'));
 
@@ -27,8 +28,14 @@ const DashboardRoutes = () => {
             <Route path="/cards">
               <MF3Cards />
             </Route>
-            <Route path="/credits">
+            <Route path="/list">
               <MF2Payments />
+            </Route>
+            <Route path="/services">
+              <MF1Main />
+            </Route>
+            <Route path="/create-payment">
+              <MF5CreatePayment />
             </Route>
             <Route path="/home">
               <MF1Main />

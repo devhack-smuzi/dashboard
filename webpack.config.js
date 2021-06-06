@@ -29,8 +29,8 @@ const services = [
   },
   {
     url: 'http://localhost:5005/',
-    endpoint: 'widget/legal-payments',
-    name: 'mf5LegalPayments',
+    endpoint: 'widget/create-payment',
+    name: 'mf5CreatePayment',
   },
 ];
 
