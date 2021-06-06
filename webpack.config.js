@@ -13,13 +13,13 @@ const services = [
   },
   {
     url: 'http://localhost:5002/',
-    endpoint: 'mf3cards',
-    name: 'mf3Cards',
+    endpoint: 'mf2payments',
+    name: 'mf2Payments',
   },
   {
     url: 'http://localhost:5003/',
-    endpoint: 'mf2payments',
-    name: 'mf2Payments',
+    endpoint: 'mf3cards',
+    name: 'mf3Cards',
   },
   {
     url: 'http://localhost:5004/',
