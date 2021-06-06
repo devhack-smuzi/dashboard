@@ -1,0 +1,10 @@
+.statistics {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.statistics-toggle {
+  border-bottom: 1px dotted #ccc;
+  cursor: pointer;
+  font-size: 16px;
+}

@@ -32,6 +32,11 @@ const services = [
     endpoint: 'widget/create-payment',
     name: 'mf5CreatePayment',
   },
+  {
+    url: 'http://localhost:5006/',
+    endpoint: 'widget/statistics',
+    name: 'mf6Statistics',
+  },
 ];
 
 console.log(`/* REMOTES: */`);
