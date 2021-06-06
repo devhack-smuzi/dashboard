@@ -8,22 +8,22 @@ const getSharedDeps = require('./utils').getSharedDeps;
 const services = [
   {
     url: 'http://localhost:5001/',
-    endpoint: 'main',
+    endpoint: 'widget/main',
     name: 'mf1Main',
   },
   {
     url: 'http://localhost:5002/',
-    endpoint: 'payments',
+    endpoint: 'widget/payments',
     name: 'mf2Payments',
   },
   {
     url: 'http://localhost:5003/',
-    endpoint: 'cards',
+    endpoint: 'widget/cards',
     name: 'mf3Cards',
   },
   {
     url: 'http://localhost:5004/',
-    endpoint: 'navigation',
+    endpoint: 'widget/navigation',
     name: 'mf4Navigation',
   },
 ];
