@@ -19,11 +19,10 @@ const MF2Payments = () => {
         bootstrap(appModuleClass);
       });
     });
-  });
+  }, []);
 
   return (
     <div>
-      - платежи
       {/* @ts-ignore */}
       <mf2-payments></mf2-payments>
     </div>

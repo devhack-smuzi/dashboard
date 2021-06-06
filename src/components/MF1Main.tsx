@@ -19,11 +19,10 @@ const MF1Main = () => {
         bootstrap(appModuleClass);
       });
     });
-  });
+  }, []);
 
   return (
     <div>
-      - главная
       {/* @ts-ignore */}
       <mf1-main></mf1-main>
     </div>

@@ -23,7 +23,6 @@ const MF3Cards = () => {
 
   return (
     <div>
-      - карты
       {/* @ts-ignore */}
       <mf3-cards></mf3-cards>
     </div>
