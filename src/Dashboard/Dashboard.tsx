@@ -1,38 +1,16 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+
 import 'mf4Navigation/Bundle';
 
 import './styles.css';
+import MF3Cards from '../components/MF3Cards';
+import MF1Main from '../components/MF1Main';
 
 const Header = React.lazy(() => import('mf4Navigation/Header'));
 const Sidebar = React.lazy(() => import('mf4Navigation/Sidebar'));
 
-export function loadPlatform(): Promise<any> {
-  return import('mf1Main/MF1Platform');
-}
-
-export function loadMF1Main(): Promise<any> {
-  return import('mf1Main/MF1Main');
-}
-
-export function loadMF3Cards(): Promise<any> {
-  return import('mf3Cards/MF3Cards');
-}
-
 const Dashboard = () => {
-  loadPlatform().then((platform) => {
-    const bootstrap = platform.default;
-
-    loadMF1Main().then((mf1Main) => {
-      const appModuleClass = mf1Main.AppModule;
-      bootstrap(appModuleClass);
-    });
-
-    loadMF3Cards().then((mf3Cards) => {
-      const appModuleClass = mf3Cards.AppModule;
-      bootstrap(appModuleClass);
-    });
-  });
-
   return (
     <React.Fragment>
       <React.Suspense fallback={<div>....loading Header</div>}>
@@ -45,10 +23,18 @@ const Dashboard = () => {
           </React.Suspense>
         </div>
         <div className="content">
-          {/* @ts-ignore */}
-          <mf1-main></mf1-main>
-          {/* @ts-ignore */}
-          <mf3-cards></mf3-cards>
+          <Router>
+            <div>
+              <Switch>
+                <Route path="/cards">
+                  <MF3Cards />
+                </Route>
+                <Route path="/">
+                  <MF1Main />
+                </Route>
+              </Switch>
+            </div>
+          </Router>
         </div>
       </div>
     </React.Fragment>
