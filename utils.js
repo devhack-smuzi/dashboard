@@ -1,7 +1,6 @@
 const deps = require('./package.json').dependencies;
 const env = process.env.NODE_ENV || 'development';
 
-// TODO: it work with 'mf1Main@/mf1main/remoteEntry.js' realative path after @?
 const getRemotes = (services) =>
   services
     .map((service) => ({
