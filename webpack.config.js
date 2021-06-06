@@ -2,6 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const getEnv = require('./utils').getEnv;
 const getRemotes = require('./utils').getRemotes;
 const getSharedDeps = require('./utils').getSharedDeps;
 
@@ -43,7 +44,7 @@ module.exports = {
   },
 
   output: {
-    publicPath: '/dashboard/',
+    publicPath: getEnv() === 'production' ? '/dashboard/' : 'auto',
   },
 
   resolve: {

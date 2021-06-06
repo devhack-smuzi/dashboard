@@ -29,7 +29,10 @@ const getSharedDeps = () => ({
   },
 });
 
+const getEnv = () => env;
+
 module.exports = {
+  getEnv,
   getRemotes,
   getSharedDeps,
 };
